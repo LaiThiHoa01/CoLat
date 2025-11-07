@@ -43,3 +43,60 @@
 .vbox{
     -fx-spacing: 20;
 }
+#home{
+    -fx-background-color: #006000;
+    -fx-border-color: #333333;
+    -fx-border-width: 5px;
+    -fx-background-radius: 45px;
+    -fx-border-radius:45px;
+    -fx-padding: 20px;
+}
+#buttonNvsN{
+    -fx-background-color: black;
+    -fx-alignment: center;
+    -fx-background-radius: 5px;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Times New Roman";
+    -fx-padding: 25px;
+    -fx-border-width: 3px;
+    -fx-border-color: white;
+    -fx-border-radius:2px;
+
+}
+#buttonNvsM{
+    -fx-background-color: black;
+    -fx-alignment: center;
+    -fx-background-radius: 5px;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Times New Roman";
+    -fx-padding: 25px;
+    -fx-border-width: 3px;
+    -fx-border-color: white;
+    -fx-border-radius:2px;
+}
+#buttonDe{
+    -fx-background-color: black;
+    -fx-alignment: center;
+    -fx-background-radius: 5px;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Times New Roman";
+    -fx-padding: 25px;
+    -fx-border-width: 3px;
+    -fx-border-color: white;
+    -fx-border-radius:2px;
+}
+#buttonKho{
+    -fx-background-color: black;
+    -fx-alignment: center;
+    -fx-background-radius: 5px;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Times New Roman";
+    -fx-padding: 25px;
+    -fx-border-width: 3px;
+    -fx-border-color: white;
+    -fx-border-radius:2px;
+}
