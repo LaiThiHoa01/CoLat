@@ -26,3 +26,20 @@
     -fx-fill: #ededed;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5, 0.0, 0, 1);
 }
+.pretty-button{
+    -fx-font-family: "Microsoft Sans Serif";
+    -fx-background-color: none;
+    -fx-text-fill: white;
+    -fx-border-color: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12px;
+    -fx-padding: 8 6;
+    -fx-border-width: 2px;
+    -fx-min-width: 140px;
+
+
+}
+.vbox{
+    -fx-spacing: 20;
+}
