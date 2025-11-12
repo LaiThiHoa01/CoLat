@@ -1,8 +1,9 @@
 module com.example.colat {
     requires javafx.controls;
     requires javafx.fxml;
+    requires com.jfoenix;
 
 
-    opens com.example.colat to javafx.fxml;
-    exports com.example.colat;
+    opens controller to javafx.fxml;
+    exports controller;
 }
