@@ -26,6 +26,12 @@
     -fx-fill: #ededed;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5, 0.0, 0, 1);
 }
+.start{
+
+    /*-fx-background-image: url("img/file.png");*/
+    /*-fx-background-size: cover;*/
+    -fx-background-color: #006000;
+}
 .pretty-button{
     -fx-font-family: "Microsoft Sans Serif";
     -fx-background-color: none;
@@ -36,19 +42,19 @@
     -fx-background-radius: 12px;
     -fx-padding: 8 6;
     -fx-border-width: 2px;
-    -fx-min-width: 140px;
+    -fx-min-width: 160px;
 
 
 }
 .vbox{
     -fx-spacing: 20;
 }
-#home{
+.home{
     -fx-background-color: #006000;
     -fx-border-color: #333333;
     -fx-border-width: 5px;
-    -fx-background-radius: 45px;
-    -fx-border-radius:45px;
+    /*-fx-background-radius: 45px;*/
+    /*-fx-border-radius:45px;*/
     -fx-padding: 20px;
 }
 #buttonNvsN{

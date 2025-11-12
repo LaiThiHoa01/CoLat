@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="748.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="748.0" styleClass="home" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CheDo">
     <center>
         <VBox alignment="CENTER" prefHeight="250.0" prefWidth="250.0" BorderPane.alignment="CENTER">
             <children>
@@ -25,9 +25,9 @@
         </VBox>
     </center>
     <top>
-        <Label fx:id="textOption" alignment="CENTER" prefHeight="112.0" prefWidth="516.0" style="-fx-border-width: 2px; -fx-border-color: white; -fx-border-radius: 5px;" text="Chọn chế độ" textAlignment="CENTER" BorderPane.alignment="CENTER">
+        <Label fx:id="textOption" alignment="CENTER" prefHeight="112.0" prefWidth="516.0" style="-fx-border-width: 2px; -fx-border-color: white; -fx-border-radius: 5px;" text="Chọn chế độ" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER">
             <font>
-                <Font name="Times New Roman" size="61.0" />
+                <Font name="Avenir Light" size="50.0" />
             </font>
             <effect>
                 <Bloom threshold="0.74" />
