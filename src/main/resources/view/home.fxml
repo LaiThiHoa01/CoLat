@@ -14,21 +14,21 @@
    <center>
       <VBox alignment="CENTER" prefHeight="250.0" prefWidth="250.0" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <children>
-            <JFXRadioButton fx:id="rdTurn" text="ĐI TRƯỚC" textFill="WHITE">
+            <JFXRadioButton fx:id="rdTurn" prefHeight="33.0" prefWidth="166.0" text="ĐI TRƯỚC">
                <selectedColor>
                   <Color red="0.019200000911951065" green="0.3833421468734741" blue="0.9599999785423279" />
                </selectedColor>
                <font>
-                  <Font name="Times New Roman" size="18.0" />
+                  <Font name="Times New Roman" size="25.0" />
                </font>
                <VBox.margin>
                   <Insets bottom="15.0" />
                </VBox.margin>
                <unSelectedColor>
-                  <Color red="1.0" green="1.0" blue="1.0" />
+                  <Color />
                </unSelectedColor>
             </JFXRadioButton>
-            <JFXButton fx:id="buttonNvsN" prefHeight="90.0" prefWidth="250.0" stylesheets="@style.css" text="Người với Máy" textFill="#fffdfd">
+            <JFXButton fx:id="buttonNvsN" prefHeight="90.0" prefWidth="250.0" styleClass="btn" stylesheets="@style.css" text="Người với Máy" textFill="#fffdfd">
                <opaqueInsets>
                   <Insets bottom="15.0" />
                </opaqueInsets>
@@ -36,7 +36,7 @@
                   <Insets bottom="30.0" />
                </VBox.margin>
             </JFXButton>
-            <JFXButton fx:id="buttonNvsM" layoutX="10.0" layoutY="10.0" prefHeight="90.0" prefWidth="250.0" stylesheets="@style.css" text="Máy với Máy" textFill="#fffdfd" />
+            <JFXButton fx:id="buttonNvsM" layoutX="10.0" layoutY="10.0" prefHeight="90.0" prefWidth="250.0" styleClass="btn" stylesheets="@style.css" text="Máy với Máy" textFill="#fffdfd" />
          </children>
       </VBox>
    </center>
@@ -51,9 +51,9 @@
       </Label>
    </top>
    <bottom>
-      <JFXButton fx:id="btnBack" prefHeight="30.0" prefWidth="83.0" style="-fx-background-color: white; -fx-background-radius: 25px; -fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 25px;" text="Quay lại" BorderPane.alignment="TOP_LEFT">
+      <JFXButton fx:id="btnBack" prefHeight="51.0" prefWidth="123.0" style="-fx-background-color: white; -fx-background-radius: 25px; -fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 25px;" text="Quay lại" BorderPane.alignment="TOP_LEFT">
          <font>
-            <Font name="Times New Roman Bold" size="15.0" />
+            <Font name="Times New Roman Bold" size="20.0" />
          </font>
       </JFXButton>
    </bottom>
