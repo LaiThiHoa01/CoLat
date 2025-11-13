@@ -14,7 +14,7 @@ public class App extends Application {
     // Trong App.java
     public void start(Stage primaryStage) throws IOException {
         // Phải có dấu "/" ở đầu
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/index.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/colat.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
 
