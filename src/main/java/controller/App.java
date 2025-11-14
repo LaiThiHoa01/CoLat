@@ -13,12 +13,11 @@ public class App extends Application {
     @Override
     // Trong App.java
     public void start(Stage primaryStage) throws IOException {
-        // Phải có dấu "/" ở đầu
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/colat.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
 
-        primaryStage.initStyle(StageStyle.UNDECORATED); // Sử dụng primaryStage
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

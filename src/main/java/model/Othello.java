@@ -12,9 +12,7 @@ public class Othello {
     private boolean isBlackTurn = true;
 // hướng di chuyển
     private static final int[][] directions = {
-            {-1, -1}, {-1, 0}, {-1, 1},
-            {0, -1},           {0, 1},
-            {1, -1},  {1, 0},  {1, 1}
+            {-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1},  {1, 0},  {1, 1}
     };
     public Othello() {
         board[3][3] = WHITE;
@@ -58,22 +56,25 @@ public class Othello {
     }
     private boolean canFlip(int row, int col, String me) {
         String opp = me.equals(BLACK) ? WHITE : BLACK;
-
         for (int[] d : directions) {
             int r = row + d[0];
             int c = col + d[1];
             boolean seenOpp = false;
-
+            int step = 1;
             while (r >= 0 && r < 8 && c >= 0 && c < 8 && board[r][c] != EMPTY) {
+                System.out.printf("Step %d: r=%d c=%d val=%s seenOpp=%b%n", step, r, c, board[r][c], seenOpp);
                 if (board[r][c].equals(opp))
                     seenOpp = true;
-                else if (board[r][c].equals(me) && seenOpp)
+                else if (board[r][c].equals(me) && seenOpp) {
+                    System.out.printf("Found flip at step %d (r=%d,c=%d)%n", step, r, c);
                     return true;
-                 else
+                } else
                     break;
                 r += d[0];
                 c += d[1];
+                step++;
             }
+
         }
         return false; // Không tìm thấy hướng nào
     }
