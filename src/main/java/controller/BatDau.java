@@ -15,13 +15,10 @@ import java.io.IOException;
 
 public class BatDau {
 
-    // 1. Thêm @FXML để JavaFX "tiêm" (inject) các nút từ FXML vào đây
-    //... (bên trong lớp Start)
-
     @FXML
     public JFXButton start;
     @FXML
-    public JFXButton huongdan; // Nút này
+    public JFXButton huongdan;
     @FXML
     public JFXButton exit;
 
@@ -53,7 +50,6 @@ public class BatDau {
                 + "4. Nếu không thể đi được nước nào, bạn sẽ bị mất lượt.\n\n"
                 + "5. Trò chơi kết thúc khi bàn cờ đầy hoặc không ai có thể đi được nữa. Ai có nhiều quân cờ hơn sẽ thắng.";
 
-        // Dùng TextArea để nội dung có thể cuộn được
         TextArea textArea = new TextArea(content);
         textArea.setEditable(false);
         textArea.setWrapText(true);

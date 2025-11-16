@@ -6,15 +6,13 @@ import java.util.List;
 public class Othello {
     public static final String BLACK = "B";
     public static final String WHITE = "W";
-    public static final String EMPTY = null;
 
     private String[][] board = new String[8][8];
     private boolean isBlackTurn = true;
-// hướng di chuyển
-    private static final int[][] directions = {
+    private static final int[][] tamHuongDi = {
             {-1, -1}, {-1, 0}, {-1, 1},
-            {0, -1},           {0, 1},
-            {1, -1},  {1, 0},  {1, 1}
+            {0, -1}          ,{0, 1},
+            {1, -1}, {1, 0}, {1, 1}
     };
     public Othello() {
         board[3][3] = WHITE;
@@ -26,81 +24,63 @@ public class Othello {
     public String getPieceAt(int row, int col) {
         return board[row][col];
     }
-
     public boolean isBlackTurn() {
         return isBlackTurn;
     }
-//  lượt đi
     public String getCurrentPlayerMark() {
         return isBlackTurn ? BLACK : WHITE;
     }
-
-// nước đi hợp lệ
     public boolean isMoveValid(int row, int col) {
-        if (board[row][col] != EMPTY) {
-            return false;
-        }
-        // Kiểm tra xem có thể lật được quân cờ nào không
-        return canFlip(row, col, getCurrentPlayerMark());
+        return board[row][col] == null && coTheDat(row,col,getCurrentPlayerMark());
     }
-
     public List<int[]> makeMove(int row, int col) {
         String me = getCurrentPlayerMark();
-
         List<int[]> flipped = applyFlip(row, col, me);
-
         board[row][col] = me;
         flipped.add(new int[]{row, col});
-
         isBlackTurn = !isBlackTurn;
-
         return flipped;
     }
-    private boolean canFlip(int row, int col, String me) {
-        String opp = me.equals(BLACK) ? WHITE : BLACK;
-
-        for (int[] d : directions) {
-            int r = row + d[0];
-            int c = col + d[1];
-            boolean seenOpp = false;
-
-            while (r >= 0 && r < 8 && c >= 0 && c < 8 && board[r][c] != EMPTY) {
-                if (board[r][c].equals(opp))
-                    seenOpp = true;
-                else if (board[r][c].equals(me) && seenOpp)
+    private boolean coTheDat(int row, int col, String me) {
+        String bot = me.equals("B") ? WHITE : BLACK;
+        for(int[] huongdi : tamHuongDi) {
+            int r = row +huongdi[0];
+            int c = col +huongdi[1];
+            boolean timThayBot = false;
+            while(r>=0&& r<8&& c>=0&& c<8&& board[r][c] !=null) {
+                if(board[r][c].equals(bot)) {
+                    timThayBot = true;
+                }else if((board[r][c].equals(me))&& timThayBot){
                     return true;
-                 else
-                    break;
-                r += d[0];
-                c += d[1];
+                }else break;
+                r+=huongdi[0];
+                c+=huongdi[1];
             }
         }
-        return false; // Không tìm thấy hướng nào
+       return false;
     }
     private List<int[]> applyFlip(int row, int col, String me) {
-        String opp = me.equals(BLACK) ? WHITE : BLACK;
-        List<int[]> totalFlipped = new ArrayList<>();
+        String bot  = me.equals("B") ? WHITE : BLACK;
+        List<int[]> tongQuanDaLat = new ArrayList<>();
+        for(int[] huongdi : tamHuongDi) {
+            int r = row +huongdi[0];
+            int c = col +huongdi[1];
+            List<int[]> biLat = new ArrayList<>();
+            while(r>=0&& r<8 && c>=0&& c<8&& board[r][c]!= null) {
+                if(board[r][c].equals(bot)) {
+                    biLat.add(new int[]{r,c});
+                }else if(board[r][c].equals(me)) {
+                    for(int[] b : biLat) {
+                        board[b[0]][b[1]] = me;
+                        tongQuanDaLat.add(b);
+                    } break;
+                }else break;
+                r+=huongdi[0];
+                c+=huongdi[1];
+                }
 
-        for (int[] d : directions) {
-            int r = row + d[0];
-            int c = col + d[1];
-            List<int[]> toFlip = new ArrayList<>();
-
-            while (r >= 0 && r < 8 && c >= 0 && c < 8 && board[r][c] != EMPTY) {
-                if (board[r][c].equals(opp)) {
-                    toFlip.add(new int[]{r, c});
-                } else if (board[r][c].equals(me)) {
-                    for (int[] p : toFlip) {
-                        board[p[0]][p[1]] = me;
-                        totalFlipped.add(p);
-                    }
-                    break;
-                } else
-                    break;
-                r += d[0];
-                c += d[1];
-            }
         }
-        return totalFlipped;
+        return tongQuanDaLat;
+
     }
 }
