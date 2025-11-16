@@ -68,7 +68,6 @@ public class Game {
         }
         updateTurnDisplay();
     }
-
     private void updateTurnDisplay() {
         String turnText = gameModel.isBlackTurn() ? "Lượt của: Đen (Người chơi)" : "Lượt của: Trắng (Máy)";
         System.out.println("--- " + turnText + " ---");
