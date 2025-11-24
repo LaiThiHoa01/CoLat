@@ -1,0 +1,15 @@
+/* Hover (di chuột vào) */
+.menu-button:hover {
+    -fx-scale-x: 1.08;
+    -fx-scale-y: 1.08;
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,0,0.6), 20, 0.3, 0, 0);
+}
+
+/* Click (ấn xuống) */
+.menu-button:pressed {
+    -fx-scale-x: 0.93;
+    -fx-scale-y: 0.93;
+    -fx-opacity: 0.75;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.40), 20, 0.25, 0, 0);
+}

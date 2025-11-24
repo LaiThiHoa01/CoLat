@@ -1,6 +1,7 @@
 package controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
@@ -11,6 +12,9 @@ import java.util.List;
 public class Game {
     @FXML
     private GridPane boardGrid;
+
+    @FXML
+    private BorderPane boardGame;
 
     // Model
     private Othello gameModel;
@@ -75,7 +79,7 @@ public class Game {
     private void placePiece(int row, int col, String color) {
         StackPane cell = cells[row][col];
         cell.getChildren().clear();
-        Circle piece = new Circle(25);
+        Circle piece = new Circle(18);
         if ("black".equals(color)) {
             piece.getStyleClass().add("piece-black");
         } else {

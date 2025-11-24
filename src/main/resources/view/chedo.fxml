@@ -6,36 +6,61 @@
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="748.0" styleClass="home" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CheDo">
+<BorderPane fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="880.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CheDo">
     <center>
-        <VBox alignment="CENTER" prefHeight="250.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" prefHeight="495.0" prefWidth="880.0" BorderPane.alignment="CENTER">
             <children>
-                <JFXButton fx:id="buttonDe" prefHeight="90.0" prefWidth="250.0" stylesheets="@style.css" text="DỄ" textFill="#fffdfd">
+                <JFXButton fx:id="btnEasy" prefHeight="90.0" prefWidth="250.0" styleClass="buttonStyle" stylesheets="@style.css" text="DỄ">
                     <opaqueInsets>
                         <Insets bottom="15.0" />
                     </opaqueInsets>
                     <VBox.margin>
                         <Insets bottom="30.0" />
                     </VBox.margin>
+               <font>
+                  <Font size="22.0" />
+               </font>
                 </JFXButton>
-                <JFXButton fx:id="buttonKho" layoutX="10.0" layoutY="10.0" prefHeight="90.0" prefWidth="250.0" stylesheets="@style.css" text="KHÓ" textFill="#fffdfd" />
+                <JFXButton fx:id="btnHard" layoutX="10.0" layoutY="10.0" prefHeight="90.0" prefWidth="250.0" styleClass="buttonStyle" stylesheets="@style.css" text="KHÓ">
+               <font>
+                  <Font size="22.0" />
+               </font></JFXButton>
             </children>
         </VBox>
     </center>
     <top>
-        <Label fx:id="textOption" alignment="CENTER" prefHeight="112.0" prefWidth="516.0" style="-fx-border-width: 2px; -fx-border-color: white; -fx-border-radius: 5px;" text="Chọn chế độ" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER">
+        <Label fx:id="textOption" alignment="CENTER" prefHeight="112.0" prefWidth="516.0" stylesheets="@style.css" text="Chọn chế độ" textAlignment="CENTER" BorderPane.alignment="CENTER">
             <font>
-                <Font name="Avenir Light" size="50.0" />
+                <Font name="Segoe UI Bold Italic" size="50.0" />
             </font>
             <effect>
                 <Bloom threshold="0.74" />
             </effect>
+         <textFill>
+            <LinearGradient endX="0.8674242424242424" endY="1.0" startX="0.8409091198083126">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.5254902243614197" blue="0.0235294122248888" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5803921818733215" green="0.5764706134796143" blue="0.4745098054409027" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
         </Label>
     </top>
     <bottom>
-        <JFXButton fx:id="btnBack" prefHeight="30.0" prefWidth="83.0" style="-fx-background-color: white; -fx-background-radius: 25px; -fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 25px;" text="Quay lại" BorderPane.alignment="TOP_LEFT">
+        <JFXButton fx:id="btnBack" prefHeight="46.0" prefWidth="122.0" styleClass="buttonStyle" stylesheets="@style.css" text="Quay lại" BorderPane.alignment="TOP_LEFT">
             <font>
                 <Font name="Times New Roman Bold" size="15.0" />
             </font>
