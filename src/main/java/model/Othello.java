@@ -20,6 +20,37 @@ public class Othello {
         board[4][3] = BLACK;
         board[4][4] = WHITE;
     }
+    // --- [MỚI] Copy Constructor để AI mô phỏng ---
+    public Othello(Othello other) {
+        for (int i = 0; i < 8; i++) {
+            System.arraycopy(other.board[i], 0, this.board[i], 0, 8);
+        }
+        this.isBlackTurn = other.isBlackTurn;
+    }
+
+    // --- [MỚI] Lấy danh sách các nước đi hợp lệ ---
+    public List<int[]> getValidMoves() {
+        List<int[]> moves = new ArrayList<>();
+        String currentPlayer = getCurrentPlayerMark();
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (board[i][j] == null && canPlace(i, j, currentPlayer)) {
+                    moves.add(new int[]{i, j});
+                }
+            }
+        }
+        return moves;
+    }
+    // --- [MỚI] Đếm điểm để lượng giá ---
+    public int getScore(String player) {
+        int score = 0;
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (player.equals(board[i][j])) score++;
+            }
+        }
+        return score;
+    }
 
     public String getPieceAt(int row, int col) {
         return board[row][col];
@@ -31,7 +62,7 @@ public class Othello {
         return isBlackTurn ? BLACK : WHITE;
     }
     public boolean isMoveValid(int row, int col) {
-        return board[row][col] == null && coTheDat(row,col,getCurrentPlayerMark());
+        return board[row][col] == null && canPlace(row,col,getCurrentPlayerMark());
     }
     public List<int[]> makeMove(int row, int col) {
         String me = getCurrentPlayerMark();
@@ -41,7 +72,7 @@ public class Othello {
         isBlackTurn = !isBlackTurn;
         return flipped;
     }
-    private boolean coTheDat(int row, int col, String me) {
+    private boolean canPlace(int row, int col, String me) {
         String bot = me.equals("B") ? WHITE : BLACK;
         for(int[] huongdi : tamHuongDi) {
             int r = row +huongdi[0];

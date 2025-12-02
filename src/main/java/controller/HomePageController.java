@@ -1,5 +1,4 @@
 package controller;
-
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;

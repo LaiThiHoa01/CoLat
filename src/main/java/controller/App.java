@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -13,12 +12,12 @@ public class App extends Application {
     public void start(Stage primaryStage) throws Exception {
         // Tên file FXML của bạn (giả sử tên là "MainScene.fxml" và nằm trong classpath)
         // Nếu file FXML nằm trong src/main/resources, bạn dùng "/"
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/colat.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/othello.fxml"));
 
         // Đặt Controller là class VideoBackgroundApp
         loader.setControllerFactory(c -> {
-            if (c.equals(Game.class)) {
-                return new Game();
+            if (c.equals(Test.class)) {
+                return new Test();
             } else {
                 try {
                     return c.getDeclaredConstructor().newInstance();
