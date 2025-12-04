@@ -5,6 +5,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
@@ -12,7 +14,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="880.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChoosePlayController">
+<BorderPane fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="880.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChoosePlayController">
    <center>
       <VBox alignment="CENTER" prefHeight="250.0" prefWidth="250.0" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <children>
@@ -21,7 +23,7 @@
                   <Color red="0.019200000911951065" green="0.3833421468734741" blue="0.9599999785423279" />
                </selectedColor>
                <font>
-                  <Font name="Times New Roman Bold" size="25.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
                <VBox.margin>
                   <Insets bottom="15.0" />
@@ -30,7 +32,7 @@
                   <Color red="1.0" green="1.0" blue="1.0" />
                </unSelectedColor>
             </JFXRadioButton>
-            <JFXButton fx:id="buttonNvsN" prefHeight="90.0" prefWidth="250.0" styleClass="buttonStyle" stylesheets="@style.css" text="Người với Máy">
+            <JFXButton fx:id="buttonNvsN" onAction="#choosePvM" prefHeight="65.0" prefWidth="214.0" styleClass="buttonStyle" stylesheets="@style.css" text="Người với Máy" textFill="WHITE">
                <opaqueInsets>
                   <Insets bottom="15.0" />
                </opaqueInsets>
@@ -38,7 +40,7 @@
                   <Insets bottom="30.0" />
                </VBox.margin>
             </JFXButton>
-            <JFXButton fx:id="buttonNvsM" layoutX="10.0" layoutY="10.0" prefHeight="90.0" prefWidth="250.0" styleClass="buttonStyle" stylesheets="@style.css" text="Máy với Máy" />
+            <JFXButton fx:id="buttonNvsM" layoutX="10.0" layoutY="10.0" onAction="#chooseMvM" prefHeight="63.0" prefWidth="224.0" styleClass="buttonStyle" stylesheets="@style.css" text="Máy với Máy" textFill="WHITE" />
          </children>
       </VBox>
    </center>
@@ -72,13 +74,20 @@
       </Label>
    </top>
    <bottom>
-      <JFXButton fx:id="btnBack" prefHeight="51.0" prefWidth="123.0" styleClass="buttonStyle" stylesheets="@style.css" text="Quay lại" BorderPane.alignment="TOP_LEFT">
+      <JFXButton fx:id="btnBack" onAction="#backToHome" prefHeight="57.0" prefWidth="181.0" stylesheets="@style.css" text="Quay lại" textFill="WHITE" BorderPane.alignment="TOP_LEFT">
          <font>
-            <Font name="Times New Roman Bold" size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
          <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" />
          </BorderPane.margin>
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/btnReplay.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </JFXButton>
    </bottom>
 </BorderPane>

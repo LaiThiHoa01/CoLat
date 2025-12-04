@@ -4,6 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
@@ -13,61 +14,65 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="880.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlayModeController">
-    <center>
-        <VBox alignment="CENTER" prefHeight="495.0" prefWidth="880.0" BorderPane.alignment="CENTER">
-            <children>
-                <JFXButton fx:id="btnEasy" prefHeight="55.0" prefWidth="188.0" styleClass="buttonStyle" stylesheets="@style.css" text="DỄ">
-                    <opaqueInsets>
-                        <Insets bottom="15.0" />
-                    </opaqueInsets>
-                    <VBox.margin>
-                        <Insets bottom="30.0" />
-                    </VBox.margin>
-               <font>
-                  <Font size="22.0" />
-               </font>
-                </JFXButton>
-                <JFXButton fx:id="btnHard" layoutX="10.0" layoutY="10.0" prefHeight="53.0" prefWidth="209.0" styleClass="buttonStyle" stylesheets="@style.css" text="KHÓ">
-               <font>
-                  <Font size="22.0" />
-               </font></JFXButton>
-            </children>
-        </VBox>
-    </center>
-    <top>
-        <Label fx:id="textOption" alignment="CENTER" prefHeight="112.0" prefWidth="516.0" stylesheets="@style.css" text="Chọn chế độ" textAlignment="CENTER" BorderPane.alignment="CENTER">
-            <font>
-                <Font name="Segoe UI Bold Italic" size="50.0" />
-            </font>
-            <effect>
-                <Bloom threshold="0.74" />
-            </effect>
+   <center>
+      <VBox alignment="CENTER" prefHeight="250.0" prefWidth="250.0" stylesheets="@style.css" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="buttonEasy" onAction="#chooseEasy" prefHeight="65.0" prefWidth="214.0" styleClass="buttonStyle" stylesheets="@style.css" text="Dễ" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets bottom="15.0" />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="buttonHard" layoutX="10.0" layoutY="10.0" onAction="#chooseHard" prefHeight="63.0" prefWidth="224.0" styleClass="buttonStyle" stylesheets="@style.css" text="Khó" textFill="WHITE" />
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <Label fx:id="textOption" alignment="CENTER" prefHeight="88.0" prefWidth="469.0" text="Chọn chế độ" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Segoe UI Bold Italic" size="50.0" />
+         </font>
+         <effect>
+            <Bloom threshold="0.74" />
+         </effect>
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
          <textFill>
-            <LinearGradient endX="0.8674242424242424" endY="1.0" startX="0.8409091198083126">
+            <LinearGradient endX="0.8712120634136777" endY="1.0" startX="0.8636363076441216">
                <stops>
                   <Stop>
                      <color>
-                        <Color red="1.0" green="0.5254902243614197" blue="0.0235294122248888" />
+                        <Color red="0.5803921818733215" green="0.5764706134796143" blue="0.4745098054409027" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.5803921818733215" green="0.5764706134796143" blue="0.4745098054409027" />
+                        <Color red="1.0" green="0.5254902243614197" blue="0.0235294122248888" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </textFill>
-        </Label>
-    </top>
-    <bottom>
-        <JFXButton fx:id="btnBack" prefHeight="46.0" prefWidth="122.0" styleClass="buttonStyle" stylesheets="@style.css" text="Quay lại" BorderPane.alignment="TOP_LEFT">
-            <font>
-                <Font name="Times New Roman Bold" size="8.0" />
-            </font>
+      </Label>
+   </top>
+   <bottom>
+      <JFXButton fx:id="btnBack" onAction="#backToHome" prefHeight="57.0" prefWidth="181.0" stylesheets="@style.css" text="Quay lại" textFill="WHITE" BorderPane.alignment="TOP_LEFT">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" />
+         </BorderPane.margin>
          <graphic>
-            <ImageView fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="40.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/btnReplay.png" />
+               </image>
+            </ImageView>
          </graphic>
-        </JFXButton>
-    </bottom>
+      </JFXButton>
+   </bottom>
 </BorderPane>

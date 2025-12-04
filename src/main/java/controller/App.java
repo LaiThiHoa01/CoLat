@@ -10,11 +10,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        // Tên file FXML của bạn (giả sử tên là "MainScene.fxml" và nằm trong classpath)
-        // Nếu file FXML nằm trong src/main/resources, bạn dùng "/"
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/othello.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/trangchu.fxml"));
 
-        // Đặt Controller là class VideoBackgroundApp
         loader.setControllerFactory(c -> {
             if (c.equals(Test.class)) {
                 return new Test();
@@ -31,10 +28,9 @@ public class App extends Application {
         Scene scene = new Scene(root, 880, 495);
 
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Video Background Demo");
+        primaryStage.setTitle("Othello");
         primaryStage.show();
     }
-
     public static void main(String[] args) {
         launch(args);
     }
