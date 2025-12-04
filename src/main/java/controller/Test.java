@@ -5,8 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
-import model.BotAI; // Import BotAI
-import model.Othello;
+import demo.BotAI; // Import BotAI
+import demo.Othello;
 
 public class Test {
     @FXML
@@ -73,7 +73,7 @@ public class Test {
             isInputAllowed = false; // Khóa input
             new Thread(() -> {
                 try {
-                    Thread.sleep(100); // Giả vờ suy nghĩ 0.7s cho tự nhiên
+                    Thread.sleep(700); // Giả vờ suy nghĩ 0.7s cho tự nhiên
                 } catch (InterruptedException e) { e.printStackTrace(); }
 
                 // Tìm nước đi tốt nhất (Độ sâu 4)

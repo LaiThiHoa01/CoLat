@@ -74,7 +74,7 @@
                <children>
                   <StackPane prefHeight="100.0" prefWidth="880.0">
                      <children>
-                        <JFXButton fx:id="btnstart" alignment="CENTER" buttonType="RAISED" prefHeight="74.0" prefWidth="207.0" ripplerFill="BLACK" style="-fx-background-radius: 50; -fx-background-color: #ff8606; -fx-border-style: dashed; -fx-border-radius: 50; -fx-opacity: 0.9; -fx-translate-y: 1; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 6, 0.2, 0, 2);" styleClass="menu-button" text="BẮT ĐẦU" textAlignment="CENTER">
+                        <JFXButton fx:id="btnstart" alignment="CENTER" buttonType="RAISED" prefHeight="74.0" prefWidth="207.0" ripplerFill="BLACK" style="-fx-background-radius: 50; -fx-background-color: #ff8606; -fx-border-style: dashed; -fx-border-radius: 50; -fx-opacity: 0.9; -fx-translate-y: 1; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 6, 0.2, 0, 2);" styleClass="menu-button" stylesheets="@trangchustyle.css" text="BẮT ĐẦU" textAlignment="CENTER">
                            <font>
                               <Font name="Segoe UI Bold" size="28.0" />
                            </font>
