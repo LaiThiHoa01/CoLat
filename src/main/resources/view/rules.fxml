@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane prefHeight="495.0" prefWidth="880.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RulesController">
+    <children>
+        <ImageView fitHeight="495.0" fitWidth="880.0" opacity="0.1" pickOnBounds="true" preserveRatio="false">
+        </ImageView>
+
+        <BorderPane prefHeight="495.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+            <top>
+                <Label text="HƯỚNG DẪN CHƠI" textFill="#ff8606" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="Stencil" size="48.0" />
+                    </font>
+                    <BorderPane.margin>
+                        <Insets top="20.0" />
+                    </BorderPane.margin>
+                </Label>
+            </top>
+
+            <center>
+                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxWidth="700.0" prefHeight="300.0" style="-fx-background-color: transparent; -fx-background: transparent;">
+                            <content>
+                                <TextFlow style="-fx-background-color: rgba(255,255,255,0.7); -fx-background-radius: 10;">
+                                    <padding>
+                                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                    </padding>
+                                    <children>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1. Mục tiêu: &#10;">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font>
+                                        </Text>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kết thúc ván cờ với số lượng quân cờ màu của mình trên bàn nhiều hơn đối phương.&#10;&#10;">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Text>
+
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2. Cách chơi: &#10;">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font>
+                                        </Text>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- Người chơi cầm quân Đen đi trước.&#10;- Bạn phải đặt quân cờ sao cho kẹp được ít nhất một quân của đối phương nằm giữa quân mới đặt và một quân khác của bạn đã có trên bàn (theo hàng ngang, dọc hoặc chéo).&#10;- Khi kẹp được, tất cả quân đối phương ở giữa sẽ bị lật sang màu của bạn.&#10;&#10;">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Text>
+
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3. Kết thúc: &#10;">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font>
+                                        </Text>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trò chơi kết thúc khi bàn cờ đầy hoặc không ai có nước đi hợp lệ. Người có nhiều quân hơn sẽ thắng.">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Text>
+                                    </children>
+                                </TextFlow>
+                            </content>
+                        </ScrollPane>
+                    </children>
+                    <BorderPane.margin>
+                        <Insets top="20.0" />
+                    </BorderPane.margin>
+                </VBox>
+            </center>
+
+            <bottom>
+                <JFXButton onAction="#backToMenu" prefHeight="51.0" prefWidth="155.0" style="-fx-background-radius: 25;" text="QUAY LẠI" textFill="WHITE" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/btnReplay.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <BorderPane.margin>
+                        <Insets bottom="30.0" />
+                    </BorderPane.margin>
+                </JFXButton>
+            </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>

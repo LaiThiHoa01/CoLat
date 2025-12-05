@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="495.0" prefWidth="880.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePageController">
+<AnchorPane prefHeight="495.0" prefWidth="880.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePageController">
    <children>
        <MediaView fx:id="videoBackground" fitHeight="495.0" fitWidth="880.0" preserveRatio="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <BorderPane prefHeight="495.0" prefWidth="880.0">
@@ -41,7 +41,7 @@
          <bottom>
             <HBox prefHeight="50.0" prefWidth="880.0" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton text=" ">
+                  <JFXButton onAction="#sound" text=" ">
                      <graphic>
                         <ImageView fx:id="btnSound" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -51,7 +51,7 @@
                      </graphic>
                   </JFXButton>
                    <Region HBox.hgrow="ALWAYS" />
-                  <JFXButton fx:id="btnExitGame" alignment="BOTTOM_CENTER" buttonType="RAISED" prefHeight="50.0" prefWidth="154.0" text="THOÁT TRÒ CHƠI" textFill="WHITE">
+                  <JFXButton fx:id="btnExitGame" alignment="BOTTOM_CENTER" buttonType="RAISED" onAction="#exitGame" prefHeight="50.0" prefWidth="154.0" text="THOÁT TRÒ CHƠI" textFill="WHITE">
                      <graphic>
       <!--                  <ImageView fitHeight="60.0" fitWidth="162.0" pickOnBounds="true" preserveRatio="true" />-->
                         <ImageView fitHeight="32.0" fitWidth="32.0">
@@ -74,9 +74,9 @@
                <children>
                   <StackPane prefHeight="100.0" prefWidth="880.0">
                      <children>
-                        <JFXButton fx:id="btnstart" alignment="CENTER" buttonType="RAISED" prefHeight="74.0" prefWidth="207.0" ripplerFill="BLACK" style="-fx-background-radius: 50; -fx-background-color: #ff8606; -fx-border-style: dashed; -fx-border-radius: 50; -fx-opacity: 0.9; -fx-translate-y: 1; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 6, 0.2, 0, 2);" styleClass="menu-button" stylesheets="@trangchustyle.css" text="BẮT ĐẦU" textAlignment="CENTER">
+                        <JFXButton fx:id="btnstart" alignment="CENTER" buttonType="RAISED" onAction="#startGame" prefHeight="74.0" prefWidth="207.0" ripplerFill="BLACK" style="-fx-background-radius: 50; -fx-background-color: #ff8606; -fx-border-style: dashed; -fx-border-radius: 50; -fx-opacity: 0.9; -fx-translate-y: 1; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 6, 0.2, 0, 2);" styleClass="menu-button" text="BẮT ĐẦU" textAlignment="CENTER">
                            <font>
-                              <Font name="Segoe UI Bold" size="28.0" />
+                              <Font name="SansSerif Regular" size="28.0" />
                            </font>
                            <graphic>
                               <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
@@ -90,7 +90,7 @@
                   </StackPane>
                   <StackPane prefHeight="100.0" prefWidth="880.0">
                      <children>
-                        <JFXButton fx:id="btnguide" alignment="CENTER" buttonType="RAISED" prefHeight="54.0" prefWidth="183.0" ripplerFill="BLACK" style="-fx-background-radius: 50; -fx-background-color: #ff8606; -fx-border-style: dashed; -fx-border-radius: 50; -fx-opacity: 0.9; -fx-translate-y: 1; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 6, 0.2, 0, 2);" styleClass="menu-button" stylesheets="@trangchustyle.css" text="HƯỚNG DẪN" textAlignment="CENTER">
+                        <JFXButton fx:id="btnguide" alignment="CENTER" buttonType="RAISED" onAction="#instructions" prefHeight="54.0" prefWidth="183.0" ripplerFill="BLACK" style="-fx-background-radius: 50; -fx-background-color: #ff8606; -fx-border-style: dashed; -fx-border-radius: 50; -fx-opacity: 0.9; -fx-translate-y: 1; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 6, 0.2, 0, 2);" styleClass="menu-button" stylesheets="@trangchustyle.css" text="HƯỚNG DẪN" textAlignment="CENTER">
                            <font>
                               <Font name="Segoe UI Bold" size="17.0" />
                            </font>

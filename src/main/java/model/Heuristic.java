@@ -43,13 +43,13 @@ public class Heuristic {
             if(val == player) myCorner++;
             else if(val == -player) oppCorner++;
         }
-        int cornerScore = 25*(myCorner + oppCorner);//he so lon
+        int cornerScore = 25*(myCorner - oppCorner);//he so lon
 
         //parity : uu tien piece difference o cuoi tran
         int parity = 0;
         int total = myPiece + oppPiece;
         if(total > 48) {
-            parity = 100 * (myPiece + oppPiece)/total;
+            parity = 100 * (myPiece - oppPiece)/total;
         }
 
         //trong so tung thanh phan
@@ -59,7 +59,9 @@ public class Heuristic {
         double wParity = 1.0;
 
         //tong hop diem
-        double score = wMaterial*material + wMobility*mobility + wCorner*cornerScore + wParity*wParity;
+        double score = wMaterial*material + wMobility*mobility + wCorner*cornerScore + wParity*parity;
+//        nhiễu
+        score += Math.random() * 5;
         return (int) Math.round(score);
     }
 }

@@ -23,7 +23,7 @@ public class Minimax_AlphaBeta implements AIPlayer {
         int alpha = Integer.MIN_VALUE/2;
         int beta = Integer.MAX_VALUE/2;
 
-        Move best = moves.get(0);//tao bien Best
+        Move best = moves.get(0);//gs nươc di dau tien là tot nhat
         int bestScore = Integer.MIN_VALUE; //diem Best
 
         if(userMoveOrdering) orderMoves(moves, board, player);//sap xep nuoc di de cat tia tot hon
@@ -31,7 +31,7 @@ public class Minimax_AlphaBeta implements AIPlayer {
         //duyet tung buoc di
         for(Move move : moves) {
             Board nb = board.applyMove(move, player);
-            int score = -alphabeta(nb, player, depth-1, -beta, -alpha);
+            int score = -alphabeta(nb, -player, depth-1, -beta, -alpha);
 
             if(score > bestScore) {
                 bestScore = score;
