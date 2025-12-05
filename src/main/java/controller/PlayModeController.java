@@ -39,18 +39,14 @@ public class PlayModeController {
     @FXML
     void chooseEasy(ActionEvent event) {
         System.out.println("Độ khó: DỄ");
-        // GameSettings.setDifficulty(Difficulty.EASY);
-
-        // Vào game
+        model.PlayMode.setDifficulty(1);
         switchScene(event, "/view/othello.fxml");
     }
 
     @FXML
     void chooseHard(ActionEvent event) {
         System.out.println("Độ khó: KHÓ");
-        // GameSettings.setDifficulty(Difficulty.HARD);
-
-        // Vào game
+       model.PlayMode.setDifficulty(7);
         switchScene(event, "/view/othello.fxml");
     }
 

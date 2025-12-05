@@ -9,6 +9,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.PlayMode;
+
 import java.io.IOException;
 
 public class ChoosePlayController {
@@ -17,15 +19,14 @@ public class ChoosePlayController {
     private JFXButton btnBack;
 
     @FXML
-    private JFXButton buttonNvsM; // Máy với Máy
+    private JFXButton buttonNvsM;
 
     @FXML
-    private JFXButton buttonNvsN; // Người với Máy
+    private JFXButton buttonNvsN;
 
     @FXML
-    private JFXRadioButton rdTurn; // Checkbox đi trước
+    private JFXRadioButton rdTurn;
 
-    // --- CÁC PHƯƠNG THỨC ACTION ---
 
     @FXML
     void backToHome(ActionEvent event) {
@@ -34,27 +35,19 @@ public class ChoosePlayController {
 
     @FXML
     void choosePvM(ActionEvent event) {
-        // Xử lý chọn Người vs Máy
+        PlayMode.gameMode = 1;
         boolean isHumanFirst = rdTurn.isSelected();
         System.out.println("Chế độ: Người vs Máy. Người đi trước: " + isHumanFirst);
-
-        // Lưu cài đặt game (bạn có thể tạo 1 class GameSettings static để lưu)
-        // GameSettings.setMode(PlayerMode.HUMAN_VS_MACHINE);
-
-        // Chuyển sang chọn độ khó
         switchScene(event, "/view/playmode.fxml");
     }
 
     @FXML
     void chooseMvM(ActionEvent event) {
-        // Xử lý chọn Máy vs Máy
+        PlayMode.gameMode = 2;
         System.out.println("Chế độ: Máy vs Máy");
-
-        // Vào thẳng game hoặc chọn độ khó tuỳ logic của bạn
         switchScene(event, "/view/othello.fxml");
     }
 
-    // Hàm chuyển cảnh chung
     private void switchScene(ActionEvent event, String path) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(path));

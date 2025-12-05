@@ -66,19 +66,21 @@ public class Board {
     //tra ve danh sach nuoc di hop le
     public List<Move> legalMoves(int player){
         List<Move> moves = new ArrayList<>();
-
         for(int i=0;i<size;i++){
             for(int j=0;j<size;j++){
                 if(board[i][j]!=empty) continue; //full ban thi kh dat
-                if(canFlip(i,j,player)) moves.add(new Move(i,j));
+                if(canFlip(i,j,player))
+                    moves.add(new Move(i,j));
             }
         }
-        if(moves.isEmpty()) moves.add(Move.pass()); //kh co nuoc di thi pass
+        if(moves.isEmpty())
+            moves.add(Move.pass()); //kh co nuoc di thi pass
         return moves;
     }
     public Board applyMove(Move move, int player){
         //neu pass tra ve ban sao ban y het
-        if(move.isPass()) return new Board(this);
+        if(move.isPass())
+            return new Board(this);
         Board nb = new Board(this); //tao ban sao de thuc hien lat quan
         nb.board[move.x][move.y] = player; //dat quan
 

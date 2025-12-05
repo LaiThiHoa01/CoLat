@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="880.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Test">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="880.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameController">
    <left>
       <BorderPane fx:id="boardGame" prefHeight="495.0" prefWidth="495.0" BorderPane.alignment="CENTER">
          <center>
@@ -86,7 +86,7 @@
             </HBox>
             <StackPane prefHeight="150.0" prefWidth="362.0">
                <children>
-                  <JFXButton fx:id="btnReplay" buttonType="RAISED" styleClass="buttonStyle" text="Chơi lại">
+                  <JFXButton fx:id="btnReplay" buttonType="RAISED" onAction="#replayGame" styleClass="buttonStyle" text="Chơi lại">
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -115,7 +115,7 @@
             </StackPane>
             <StackPane prefHeight="150.0" prefWidth="200.0">
                <children>
-                  <JFXButton fx:id="btnHome" styleClass="buttonStyle" text="Trang chủ">
+                  <JFXButton fx:id="btnHome" onAction="#backToHome" styleClass="buttonStyle" text="Trang chủ">
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
